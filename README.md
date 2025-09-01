@@ -1,0 +1,6 @@
+Module 1:
+
+CIA is a shorthand in software development, that stands for Confidentiality, Integrity and Availability. This triad shows the three fundamentals in securing software and data.
+Confidentiality has to do with ensuring authorization and authentication measures are in place so the correct parties are accessing the correct data and functions of software. Integrity makes sure that data is handles properly and safely without changing or damaging the "contents", or integrity as the name suggests, of the data. Availability is about the uptime of systems and how accesible it is at any given time, depending on the kind of software this can vary.   
+
+For my application, the most present application of these concepts is Confidentaility as that is the only principle that is being tested for this application. When using the application I have tested to ensure that "admin" and "user" can only access their own functions and neither can access the other roles' functions. INtegrity and Availability cannot be measured in this example since they are not applicable.
