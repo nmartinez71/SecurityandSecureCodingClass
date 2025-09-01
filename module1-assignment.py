@@ -1,3 +1,11 @@
+"""
+The way this app shows Confidentiality in particular is through the "if" statements and hardcoded checks of authentication.
+Using many if statements is not good practice but through this example the only authorized users can perform the specific actions given.
+Admins can only check the schedule, but they cannot see personal employee data. 
+Users can see their employee data, but cannot  access the schedule. 
+This ensures that the autorized persosn access their authorized functions which falls under Confidentiality.
+"""
+
 username1 = "manager27"
 username2 = "employee72"
 
