@@ -1,3 +1,13 @@
+Module 2:
+
+The code provides two methods of cryptography: Symmetric and Assymetric. 
+
+For the Symmetric method, I will be using the AES algorithm with the CBC (Code Block Chaining) mode. We begin by creating the AES key and Initialization vector which are required to encode and need to be random. Then we make a message, in this case "symmetric message" making sure we use the "b" prefix to have it as a byte object since we cannot use the standard string. AFter this, we create a cipher using the AES Key and IV using the CBC mode as mentioned. An important step here is to ensure that we pad the plain text since AES method only works with 16 byte blocks of data. Finally, we encypt the padded message and then decode it by doing the reverse of the steps. We use the same key and iv to create the decryptor and then decrypt the message.
+
+Now with the Asymmetric method, we will be using the RSA encryption method. Similarly to before, we start creating the keys needed so a Public and Private RSA Key. We make these readabale by using the PEM format which creates headers and footers in the text and allows. Once again we create a message in plain text, once again using the "b" prefix. Then we encrypt the text with padding here as well, this time we use the SHA256 padding method and the public key. Then we reverse, by decrypting the ciphertext and using the same padding method. The difference here is that we use the private key that was created earlier.
+
+
+
 Module 1:
 
 CIA is a shorthand in software development, that stands for Confidentiality, Integrity and Availability. This triad shows the three fundamentals in securing software and data.
