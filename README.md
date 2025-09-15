@@ -1,3 +1,9 @@
+Module 3:
+
+This assignment was to create different different demonstrations of encryption such as SHA256, Caeser Cipher and show the process for digital signing. The app works by accepting an input message form the user and a shift as an integer for the Caeser cipher. After inputting valid information, it will use the message to create a hash and also encrypt it using the cipher. Afterwards, it will carry out the digital signing process also using the message inputted.
+
+The SHA256 hash process is done using the hashlib library where I directly used the SHA256 function to encode the text into a hash. The hash can be the same if the same two strings are inputted. The Caeser cipher was coded using the method in the learning materials, so it follows the method of inputting a messagea and a shift as an integer. Together with the constants they create a range of characters that the letters can shift towards. In this case, the shift can also be used to reverse the process and decode the cipher. FOr the Digital signing, we use the cryptography library to create keys (public and private) and sign them. The input message creates a signature, which can later be verified using the corresponding public key.
+
 Module 2:
 
 The code provides two methods of cryptography: Symmetric and Assymetric. 
