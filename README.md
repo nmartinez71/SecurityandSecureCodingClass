@@ -1,9 +1,89 @@
+Module 5:
+
+## 1. 
+Flaw: 
+This is an Insecure Direct Object Reference (IDOR) or broken access control issue. The endpoint returns a user object purely based on a user identifier (userid) without verifying the requester’s identity or privileges. There is no verification for whether the requester is the owner of that or an authorized role.
+
+Fixes implemented:
+Added authentication check (req.user.id).
+Only allow access if the user is requesting their own profile or is an admin.
+ 
+## 2. 
+Flaw:
+Similar to the 1st code vulnerability, the route returns account data based solely on the useridd path parameter. It does not contain any authentication/authorization checks and also returns sensitive fields, which significantly enlarges the damage. In short, any user could potentially gather any users information.
+
+Fixed implementation:
+Check added to ensure the logged in user can only request the information from their own user.
+Removed sensitive info attached to the request.
+
+## 3. 
+Flaw: 
+The code presented in the example uses MD5, an outdated hashing method especially for passwords. The implementation shown also does not have any salt capability.
+
+Fixed implementation:
+The new code switches to Python with bcrypt, which automatically generates salts for each password and deliberately runs more slowly to make brute-force attacks far less effective.
+
+## 4.
+Flaw:
+The flaw are similar to the previous exmaple, except is uses SHA1 for password hashing. Also an insecure password hashing method. It suffers from the same outddated issues as the MD5.
+
+Fixed implementation:
+The implementations in this are also the same as in 4 where it uses bcrypt. 
+
+## 5.
+Flaw:
+The query string has the username variable which can contain any string. Meaning that attackers can implement malicious SQL into the the query.
+
+Fixed implementation:
+The query gerts turned into a prepares statement. Which allows the username variable to just be data and not SQL, so chaarcters outisde of that wont get recognized.
+
+## 6. 
+Flaw:
+The query accepts username directly as a parameter without affirming whether it is safe or not. This could lead to malicious strings being insterted as a parameter.
+
+Fixed implementation:
+If statament added to ensure the username is of valid type and characters.
+Return errors if it cannot find the username.
+
+## 7.
+Flaw:
+The function does not contain lines with authentication of the user and the email, thus could lead to anyone who knows the email can reset thew password. Moreover, the password is stored in plaintext and without hashing. 
+
+Fixed implementation:
+Added token implementation to limit password resetting. Password hashing implemented using bcrypt library.
+
+
+## 8. 
+Flaw:
+The original does not use a integrity value which means the contents have a  possibility of being tampered. In summary, without integrity it cannot safely verify that the contents are not tampered.
+
+Fixed implementation:
+Integrity resource value added, although it changes depending on CDN that provides it.
+
+## 9.
+Flaw:
+The url line accepts any url that is inputted which can make requests to any link potentially not safe urls.
+
+Fixed implementation:
+The fix added validates the url scheme, blocks private or local addresses, and sets a timeout to prevent the program from hanging.
+
+## 10
+Flaw:
+It is implied that the password entered is compared to a password presumably pulled from a database in plaintext. Therefore, making the storage of passords unsafe and vulenrable to attacks. 
+
+
+Fixed implementation:
+Ensured that the passworeds are stored in a hashed format with salt. Also ensured that thew if statement checks for the hash of the password.
+
+
 Module 4:
 
 # Simple Text Processing with Encryoiton/Decryption
 
 ## Video Explanation of Script
-https://drive.google.com/file/d/1batpowPo6DKzX-yphIGyB3kMgTyD5fCg/view?usp=sharing
+https://drive.google.com/file/d/1batpowPo6DKzX-yphIGyB3kMgTyD5fCg/view?usp=sharing 
+
+(Only IvyTech Members are able to view)
 
 
 ## Overview
