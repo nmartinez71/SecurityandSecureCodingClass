@@ -1,3 +1,55 @@
+Module 8:
+
+Secret Scanner Final Project
+
+A small Python tool that scans for hardcoded secrets like API keys, passwords, tokens, and private keys within file or directories.
+
+Features
+
+Scans a file or directory.
+Detects common secret patterns with regex
+Shows filename, line number, and match
+Optional File Explorer picker (Windows\Tkinter)
+Shows results on Terminal.
+
+Detection Logic
+
+When scanning a directory it selects a file. If no file is found or cannot read the file, it will stop the program. If a file is found it will iterate through each line and compare it to the PATTERNS values which are the regexes. If it finds any matches it will display the secrets found on the Terminal. If nothing is found it will display that as well and stop the tool.
+
+Example patterns include:
+
+Secret Type	Example Regex
+AWS Access Key	`(AKIA
+Google API Key	AIza[0-9A-Za-z\-_]{35}
+Slack Token	xox[baprs]-[0-9a-zA-Z]{10,48}
+Private Key	`-----BEGIN (RSA
+Generic Password	`(?i)(password
+
+Scanning is offline and local.
+
+More regexes can be added in the PATTERNS dictionary if needed.
+
+Usage
+
+# Launch File Explorer to pick a path (Easiest method)
+python secret_scanner.py
+
+# Scan a directory
+python secret_scanner.py ./project
+
+# Scan a single file (if in a different directory, paste the path)
+python secret_scanner.py config.py
+
+
+Testing
+
+There is a test_file to test results, ensure to replace some of the values with fake ones to try out. 
+Naviagate and select those files to see the results.
+
+Notes
+
+Never include real credentials in tests!
+
 Module 5:
 
 ## 1. 
