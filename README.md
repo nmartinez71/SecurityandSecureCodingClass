@@ -1,5 +1,8 @@
 Module 8:
 
+VIDEO DEMO:
+https://drive.google.com/file/d/1MNc3dMfzJTxQy-pk5TsCkKvXJc8hrCKW/view?usp=sharing 
+
 Secret Scanner Final Project
 
 A small Python tool that scans for hardcoded secrets like API keys, passwords, tokens, and private keys within file or directories.
